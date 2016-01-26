@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title> My first Django App</title>
+        {% load staticfiles %}
+        <link rel='stylesheet' href="{% static 'quiz/style.css' %}">
+    </head>
+    <body>
+        <h1>Users and Interests</h1>
+ 	      <ol>
+          {% for user in users %}
+            <li><a href='/interests/{{user.id}}'>{{ user.first_name }} {{user.last_name}}</a></li>
+            <p>Interest: {{user.interest.name}}</p>
+          {% endfor %}
+        </ol>
+    </body>
+</html>
